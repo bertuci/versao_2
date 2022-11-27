@@ -1,0 +1,21 @@
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+credentials:
+  usernames:
+    bertuci:
+      email: mateusbertuci@hotmail.com
+      name: Matheus Henrique Bertuci
+      password: $2b$12$w53y7m8Qtef42tC/d.JIoOlRHJsHgMzp/Hj.Gk0ve1uQVk4DGYHV.
+    jsmith:
+      email: jsmith@gmail.com
+      name: John Smith
+      password: 123
+    rbriggs:
+      email: rbriggs@gmail.com
+      name: Rebecca Briggs
+      password: 456
+preauthorized:
+  emails:
+  - melsby@gmail.com
