@@ -23,7 +23,6 @@ name, authentication_status, username = authenticator.login('Login', 'main')
 if authentication_status:
     authenticator.logout('Logout', 'main')
     st.write(f'Welcome *{name}*')
-    st.title('Some content')
     df = pd.read_excel('resultado.xlsx')
     st.title('Melhores Resultados da Bolsa')
 
