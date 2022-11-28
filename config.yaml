@@ -18,7 +18,7 @@ credentials:
       password: 456
     teste:
       email: teste@hotmail.com
-      name: testa
+      name: Admin
       password: $2b$12$irxKJa19lZG0Xhi5eqin4u2RVzUaxPXLW9Ovuw6ax72DkrqroO3mC
 preauthorized:
   emails:
