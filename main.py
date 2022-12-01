@@ -126,7 +126,31 @@ with open('config.yaml', 'w') as file:
     yaml.dump(config, file, default_flow_style=False)
 
 
+    
+def pegar_dados_acoes():
+    path = 'acoes.csv'
+    return pd.read_csv(path, delimiter=';')
 
+df = pegar_dados_acoes()
+
+acao = df['snome']
+nome_acao_escolhida = st.sidebar.selectbox('Escolha uma ação', acao)
+
+df_acao = df[df['snome'] == nome_acao_escolhida]
+acao_escolhida = df_acao.iloc[0]['sigla_acao']
+acao_escolhida = acao_escolhida + '.SA'
+
+df = yf.Ticker(acao_escolhida).history(interval=interval, period=period, auto_adjust=True, prepost=True)[["Open", "High", "Low", "Close"]]
+df = df.reset_index()
+df['hour'] = df['index'].dt.hour
+df = df.eval('neg = Close - Open ')
+sns.barplot(
+    data=df,
+    x='hour',
+    y='neg'
+)
+
+st.pyplot(plt.gcf())
 
 
 
