@@ -128,7 +128,8 @@ nome_acao_escolhida = st.sidebar.selectbox('Escolha uma ação', acao)
 df_acao = df[df['snome'] == nome_acao_escolhida]
 acao_escolhida = df_acao.iloc[0]['sigla_acao']
 acao_escolhida = acao_escolhida + '.SA'
-
+period = '1y'
+interval = '1h'
 df = yf.Ticker(acao_escolhida).history(interval=interval, period=period, auto_adjust=True, prepost=True)[["Open", "High", "Low", "Close"]]
 df = df.reset_index()
 df['hour'] = df['index'].dt.hour
