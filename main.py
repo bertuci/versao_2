@@ -4,6 +4,9 @@ import pandas as pd
 import streamlit_authenticator as stauth
 import yaml
 from yaml.loader import SafeLoader
+import seaborn as sns
+import yfinance as yf
+import matplotlib.pyplot as plt
 
 hashed_passwords = stauth.Hasher(['123', '456']).generate()
 
