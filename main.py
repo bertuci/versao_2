@@ -116,6 +116,7 @@ with open('config.yaml', 'w') as file:
 
 
 #if st.checkbox('WordCloud'):
+st.title('Estratégia por hora')
 def pegar_dados_acoes():
     path = 'acoes.csv'
     return pd.read_csv(path, delimiter=';')
